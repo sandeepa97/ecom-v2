@@ -40,20 +40,14 @@
             </div>
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
-                    <a class="text-dark px-2" href="">
+                    <a class="text-dark px-2" href="{{ $seller->facebook }}" target="_blank">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a class="text-dark px-2" href="">
+                    <a class="text-dark px-2" href="{{ $seller->twitter }}" target="_blank">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a class="text-dark px-2" href="">
+                    <a class="text-dark px-2" href="{{ $seller->instagram }}" target="_blank">
                         <i class="fab fa-instagram"></i>
-                    </a>
-                    <a class="text-dark pl-2" href="">
-                        <i class="fab fa-youtube"></i>
                     </a>
                 </div>
             </div>
@@ -70,7 +64,7 @@
                         <form action="{{ route('search') }}" method="GET">
                             <div class="input-group">
                                 <input type="text" name="keyword" value="{{ request()->get('keyword') }}" class="form-control" placeholder="Search for products" required>
-                                <input type="submit" value="Search" class="btn btn-success">
+                                <input type="submit" value="Search" class="btn btn-danger">
                             </div>
                         </form>
                     </div>
@@ -107,21 +101,19 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
+                            <a href="{{ url('/') }}" class="nav-item nav-link">Home</a>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Products</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Products</a>
                                 <div class="dropdown-menu rounded-0 m-0">
                                     @foreach ($productTypes as $productType)
                                     <a href="#" class="dropdown-item">{{ $productType->name }}</a>
                                     @endforeach
                                 </div>
                             </div>
-                            <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="{{ url('/contact') }}" class="nav-item nav-link">Contact Us</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
-                            <a href="" class="nav-item nav-link">Login</a>
-                            <a href="" class="nav-item nav-link">Register</a>
+                            <a href="{{ url('/user-login') }}" class="nav-item nav-link">Login</a>
                         </div>
                     </div>
                 </nav>
