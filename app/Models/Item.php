@@ -11,4 +11,14 @@ class Item extends Model
 
     protected $table = 'items';
 
+    public function product()
+    {
+        return $this->belongsTo(ProductType::class, 'product_type_id', 'id');
+    }
+
+    public function brand()
+    {
+        return $this->belongsTo(BrandType::class, 'brand_type_id', 'id');
+    }
+
 }

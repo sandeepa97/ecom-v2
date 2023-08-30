@@ -5,6 +5,7 @@ use App\Http\Controllers\WebController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,6 @@ Route::get('/logout', [AuthController::class, 'logout']);
 
 //Admin routes
 Route::get('/system', [DashboardController::class, 'index']);
+
+//Item Module routes
+Route::get('/items', [ItemController::class, 'index']);
